@@ -4,8 +4,13 @@ Rails.application.routes.draw do
 		member do
 			post :join
 			post :quit
-		end
+		end		
 		resources :posts
 	end
+
+	namespace :account do
+		resources :groups
+	end
+
 	root 'groups#index'
 end
