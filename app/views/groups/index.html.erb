@@ -10,7 +10,6 @@
 				<th>Title</th>
 				<th>Description</th>
 				<th>Creator</th>
-				<th>Options</th>
 			</tr>
 		</thead>
 
@@ -23,8 +22,10 @@
 				<td><%= simple_format(group.description) %></td>
 				<td><%= group.user.email %></td>
 				<td>
-					<%= link_to("Edit", edit_group_path(group), class: "btn btn-sm btn-default") %>
-					<%= link_to("Delete", group_path(group), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-sm btn-default") %>
+					<% if current_user && current_user == group.user %>
+						<%= link_to("Edit", edit_group_path(group), class: "btn btn-sm btn-default") %>
+						<%= link_to("Delete", group_path(group), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-sm btn-default") %>
+					<% end %>
 				</td>
 			</tr>
 
