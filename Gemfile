@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'simple_form', '~> 3.4'
 gem 'devise', '~> 4.2'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
